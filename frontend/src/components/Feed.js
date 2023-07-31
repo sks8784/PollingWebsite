@@ -24,7 +24,7 @@ export const Feed = () => {
 
 
     if (x !== null) {
-      const response = await fetch("http://localhost:5000/api/poll/getAll", {
+      const response = await fetch("https://pollingapi-rz7e.onrender.com/api/poll/getAll", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ export const Feed = () => {
     e.preventDefault();
     const x = localStorage.getItem("auth-token");
 
-    const response = await fetch("http://localhost:5000/api/poll/voted", {
+    const response = await fetch("https://pollingapi-rz7e.onrender.com/api/poll/voted", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

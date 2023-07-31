@@ -17,7 +17,7 @@ export const CreatePoll = () => {
     
     console.log(credit);
     if(x){
-    const response = await fetch("http://localhost:5000/api/poll/createPoll", {
+    const response = await fetch("https://pollingapi-rz7e.onrender.com/api/poll/createPoll", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
