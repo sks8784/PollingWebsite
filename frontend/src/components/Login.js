@@ -16,7 +16,6 @@ export const Login = () => {
     const response = await fetch("https://pollingapi-rz7e.onrender.com/api/auth/login", {
       method: 'POST',
       headers: {
-        'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ email: credit.email, password: credit.password })
