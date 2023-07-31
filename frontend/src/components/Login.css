@@ -1,0 +1,43 @@
+
+.container1{
+    margin-left: 22%;
+    margin-top:5%;
+    /* background-color: aquamarine; */
+    width: 50%;
+}
+
+input{
+    width: 100%;
+    /* background-color: rgb(46, 212, 204);
+    color: white; */
+}
+
+.card-title{
+    background-color: white;
+    border-radius: 2px;
+    transition-duration: 0.45s;
+    width: 80%;
+    /* align-items: left; */
+ }
+ 
+ .container1 input[type='text'],
+.container1 input[type='email'],
+.container1 input[type='password']{
+    border:0;
+    border-bottom: 1px solid #b4b4cb;
+    width: 100%;
+    padding:3px;
+    font-size:16px;
+}
+
+.container1 input:focus,
+.container1 input:focus,
+.container1 input:focus{
+  outline: none;
+
+}
+
+
+p{
+    color:black
+}
