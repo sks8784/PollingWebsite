@@ -6,7 +6,7 @@ export const Home = () => {
       <div className="cont">
           <h1>Welcome to MyPolls</h1>
           <br/>
-          <h5>Create with ❤</h5>
+          <h5>Created with ❤</h5>
       </div>
    </>
   )
