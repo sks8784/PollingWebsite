@@ -10,7 +10,7 @@ export const Sigup = () => {
 
 
   const onchange = (e) => {
-    console.log(e.target.value);
+
     setcredit({ ...credit, [e.target.name]: e.target.value })
   }
 
@@ -34,7 +34,7 @@ export const Sigup = () => {
       },
       body: JSON.stringify({ name: credit.name, username: credit.username, email: credit.email, password: credit.password })
     });
-    console.log("helllllo");
+
     const json = await response.json()
     console.log(json);
     setTimeout(function () {
@@ -117,9 +117,10 @@ export const Sigup = () => {
             />
           </div>
           <center><p>Already have an account? <Link to="/login">Login</Link></p></center>
-          <button type="submit" class="btn btn-primary">
+          <center><button type="submit" class="btn btn-primary ">
             Submit
           </button>
+          </center>
         </form>
       </div>
     </>

@@ -12,8 +12,6 @@ export const Feed = () => {
     }
   }, [])
 
-  // const [note,setnote] = useState({Ques:"",OpA:"",OpB:"",OpC:"",OpD:"",CA:"",CB:"",CC:"",CD:"",_id:""});
-
 
   const notesinital = []
   const [notes, setnotes] = useState(notesinital);
@@ -25,7 +23,7 @@ export const Feed = () => {
 
     if (x !== null) {
       const response = await fetch("https://pollingapi-rz7e.onrender.com/api/poll/getAll", {
-        method: 'POST',
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
           'authtoken': x
@@ -37,7 +35,7 @@ export const Feed = () => {
       setnotes(json);
 
     } else {
-      toast('🦄 First Login Please ', {
+      toast('🦄 Please login to access the Feed ', {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -65,8 +63,7 @@ export const Feed = () => {
       progress: undefined,
     })
 
-    console.log(e.target.id);
-    console.log(e.target.name);
+
     e.preventDefault();
     const x = localStorage.getItem("auth-token");
 
@@ -98,11 +95,11 @@ export const Feed = () => {
         draggable
         pauseOnHover
       />
-      {/* Same as */}
+
       <ToastContainer />
       <div className="row mx-3">
         <center><h2>Polls</h2></center>
-        <center>{notes.length === 0 && 'No notes to display'}</center>
+        <center>{notes.length === 0 && 'No Polls to display'}</center>
         {notes.map((note) => {
           return <>
 
@@ -112,7 +109,7 @@ export const Feed = () => {
                   <div className="card-body">
 
 
-                    <h5 className="card-title" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                    <h5><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
                       <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
                     </svg>  {note.Ques}</h5>
 
@@ -132,7 +129,7 @@ export const Feed = () => {
       </div>
 
 
-      <button onClick={handlesubmit}></button>
+      {/* <button onClick={handlesubmit}></button> */}
     </>
   )
 }

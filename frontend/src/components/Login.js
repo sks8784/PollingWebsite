@@ -11,7 +11,6 @@ export const Login = () => {
   const handleSubmit = async (e) => {
 
     e.preventDefault();
-    console.log(credit);
 
     const response = await fetch("https://pollingapi-rz7e.onrender.com/api/auth/login", {
       method: 'POST',
@@ -27,7 +26,7 @@ export const Login = () => {
     if (json.success === true) {
 
       localStorage.setItem('auth-token', json.authtoken);
-      toast.success('🦄 Login Successfully ', {
+      toast.success('🦄 Login Successful ', {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -43,7 +42,7 @@ export const Login = () => {
 
 
     } else {
-      toast.error('🦄 Email or Password Not Matched', {
+      toast.error('🦄 Invalid email or password', {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
