@@ -47,11 +47,12 @@ export const Feed = () => {
     }
   }
 
-  useEffect(() => {
-    return () => {
-      handlesubmit();
-    }
-  }, [])
+  // useEffect(() => {
+  //   return () => {
+  //     handlesubmit();
+  //   }
+  // }, [handlesubmit])
+  handlesubmit();
 
   const voted = async (e) => {
     toast('🦄 Vote Submitted ', {
