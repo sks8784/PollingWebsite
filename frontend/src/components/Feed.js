@@ -6,12 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export const Feed = () => {
   let history = useNavigate();
-  useEffect(() => {
-    return () => {
-      handlesubmit();
-    }
-  }, [])
-
+  
 
   const notesinital = []
   const [notes, setnotes] = useState(notesinital);
@@ -51,6 +46,12 @@ export const Feed = () => {
 
     }
   }
+
+  useEffect(() => {
+    return () => {
+      handlesubmit();
+    }
+  }, [])
 
   const voted = async (e) => {
     toast('🦄 Vote Submitted ', {
