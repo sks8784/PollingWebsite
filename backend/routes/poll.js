@@ -1,7 +1,9 @@
 const express=require('express');
 const router=express.Router();
 const Poll=require('../models/poll');
-const fetchuser =require('../middleware/fetchuser'); //req.user
+const fetchuser =require('../middleware/fetchuser'); 
+
+
 router.post('/createPoll',fetchuser,async(req,res)=>{
     const{ques,opA,opB,opC,opD}=req.body;
     
@@ -24,7 +26,7 @@ router.post('/createPoll',fetchuser,async(req,res)=>{
 })
 
 
-router.post('/getAll',fetchuser,async(req,res)=>{
+router.get('/getAll',fetchuser,async(req,res)=>{
     try{
         const user1=await Poll.find({_v:0});
         return res.send(user1);
